@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.vb" Inherits="KBERGER2747EX1A1._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx" Inherits="KBERGER2747EX1A1REVISED._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -41,7 +41,10 @@
                                 <asp:BoundField DataField="CountryID" HeaderText="CountryID" SortExpression="CountryID" Visible="False" />
                             </Columns>
                         </asp:GridView>
-                        <asp:SqlDataSource ID="StatesDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:WideWorldConnectionString %>" SelectCommand="SELECT StateProvinceID, StateProvinceCode, StateProvinceName, CountryID, SalesTerritory FROM Application.StateProvinces WHERE (CountryID = 230) ORDER BY SalesTerritory, StateProvinceName"></asp:SqlDataSource>
+                        <asp:SqlDataSource 
+                            ID="StatesDataSource" 
+                            runat="server" 
+                            SelectCommand="SELECT StateProvinceID, StateProvinceCode, StateProvinceName, CountryID, SalesTerritory FROM Application.StateProvinces WHERE (CountryID = 230) ORDER BY SalesTerritory, StateProvinceName"></asp:SqlDataSource>
                    </div>
                         <asp:SqlDataSource 
                         ID="CountriesSqlDataSource" 
@@ -50,10 +53,10 @@
                         SelectCommand="SELECT DISTINCT CountryID, CountryName, Region FROM Application.Countries WHERE (Region = N'Europe') ORDER BY CountryName"></asp:SqlDataSource>
             </div>
            </div>
-            <asp:SqlDataSource ID="RegionsSqlDataSource" 
+            <%--<asp:SqlDataSource ID="RegionsSqlDataSource" 
                 runat="server" 
                 ConnectionString="<%$ ConnectionStrings:WideWorldConnectionString %>" 
-                SelectCommand="SELECT DISTINCT Region FROM Application.Countries ORDER BY Region"></asp:SqlDataSource>
+                SelectCommand="SELECT DISTINCT Region FROM Application.Countries ORDER BY Region"></asp:SqlDataSource>--%>
   
     <div class="col-md-4">
             <h2>Default.aspx features:</h2>
